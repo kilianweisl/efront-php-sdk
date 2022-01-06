@@ -1,0 +1,59 @@
+<?php
+
+namespace Weisl\EFrontSDK\Helper\API\Handler;
+
+use Weisl\EFrontSDK\Helper\API\Abstraction\AbstractAPI;
+
+/**
+ * Class UserJob
+ *
+ * @author  EPIGNOSIS
+ * @package Weisl\EFrontSDK
+ * @since   1.0.0
+ */
+class UserJob extends AbstractAPI
+{
+  /**
+   * Creates a relation between the requested user and job.
+   *
+   * @param   mixed $userId  (Required) | The user identifier.
+   * @param   mixed $jobId (Required) | The job identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
+  public function AddRelation($userId, $jobId)
+  {
+    $this->_CheckId($userId)->_CheckId($jobId);
+
+    return $this->_requestHandler->Put (
+      $this->_GetAPICallURL('/Job/' . $jobId . '/AddUser'),
+      $this->_apiKey,
+      ['UserId' => $userId]
+    );
+  }
+
+  /**
+   * Removes the relation between the requested user and job.
+   *
+   * @param   mixed $userId  (Required) | The user identifier.
+   * @param   mixed $jobId (Required) | The job identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
+  public function RemoveRelation($userId, $jobId)
+  {
+    $this->_CheckId($userId)->_CheckId($jobId);
+
+    return $this->_requestHandler->Put (
+      $this->_GetAPICallURL('/Job/' . $jobId . '/RemoveUser'),
+      $this->_apiKey,
+      ['UserId' => $userId]
+    );
+  }
+}
