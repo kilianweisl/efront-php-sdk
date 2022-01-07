@@ -64,7 +64,7 @@ The authors provided the following [documentation](https://github.com/epignosis/
 | /Branch/{Id}                      | GET      | ✅          |
 | /Branches/                        | GET      | ✅          |
 | /Branch                           | POST     | ✅          |
-| /Branch/AddUser                   | POST     | ❌          |
+| /Branch/AddUser                   | POST     | ❌ --> ✅   |
 | /Branch/{Id}/AddUser              | PUT      | ✅          |
 | /Category/{Id}                    | GET      | ✅          |
 | /Categories                       | GET      | ✅          |

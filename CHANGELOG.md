@@ -9,3 +9,4 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 * [Old source code](https://github.com/epignosis/efrontPRO-SDK/) now available as public composer package
 * Wrapper for calling API (EFrontAPI)
 * All @since annotations have been updated to 1.0.0 when this project was created. @package annotations have been updated as well.
+* Added endpoints (see README)

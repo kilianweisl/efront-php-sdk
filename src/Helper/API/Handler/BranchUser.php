@@ -35,4 +35,31 @@ class BranchUser extends AbstractAPI
       ['UserId' => $userId]
     );
   }
+
+  /**
+   * Adds a user to a branch via POST method.
+   *
+   * @since 1.0.0
+   * @author Kilian Weisl
+   *
+   * @param mixed $userId   (Required) | The user identifier.
+   * @param mixed $branchId (Required) | The branch identifier.
+   *
+   * @throws \Exception
+   *
+   * @return array (Associative)
+   */
+  public function AddUser($userId, $branchId)
+  {
+    $this->_CheckId($userId)->_CheckId($branchId);
+
+    return $this->_requestHandler->Post (
+      $this->_GetAPICallURL('/Branch/AddUser'),
+      $this->_apiKey,
+      [
+        'BranchId' => $branchId,
+        'UserId' => $userId
+      ]
+    );
+  }
 }
