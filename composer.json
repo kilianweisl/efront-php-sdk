@@ -1,7 +1,7 @@
 {
     "name": "weisl/efront-php-sdk",
     "description": "This is a maintained version of the efrontPRO-SDK repository.",
-    "license": "GNU",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Kilian Weisl",

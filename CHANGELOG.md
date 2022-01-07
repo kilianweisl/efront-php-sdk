@@ -2,7 +2,13 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
-## [1.0.0] - 2022-01-06
+## [1.0.1] - 2022-01-07
+
+### Changed
+
+* License identifier
+
+## [1.0.0] - 2022-01-07
 
 ### Changed
 
