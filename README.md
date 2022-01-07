@@ -18,7 +18,7 @@ use Weisl\EFrontSDK\EFrontAPI;
 ...
 
 $api = new EFrontAPI("1.0", "https://your-efront-domain.com/API", "your-api-key");
-$api->call()->GetAPI('System')->GetInfo();
+$api->get()->GetAPI('System')->GetInfo();
 
 ```
 
