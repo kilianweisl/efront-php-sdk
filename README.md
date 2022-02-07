@@ -12,6 +12,9 @@ This package can be installed with ```composer require weisl/efront-php-sdk```.
 
 ## Usage
 
+When calling ```$api->get()```, the ```eFrontProSDK``` object will be returned. This is convenient to use the SDK as is without any helper functions. But there is also a more convenient method provided for every endpoint available in the SDK, which you'll find when you do not call ```->get()``` on the ```$api``` object. See examples below:
+### Use API with old interface
+
 ```php
 use Weisl\EFrontSDK\EFrontAPI;
 
@@ -19,10 +22,24 @@ use Weisl\EFrontSDK\EFrontAPI;
 
 $api = new EFrontAPI("1.0", "https://your-efront-domain.com/API", "your-api-key");
 $api->get()->GetAPI('System')->GetInfo();
+$api->get()->GetAPI('CourseUser')->AddRelation($userId, $courseId);
 
 ```
 
 Endpoints can be accessed the same way as before. Please refer to the provided documentation from the previous author.
+
+### Use API with new interface
+
+```php
+use Weisl\EFrontSDK\EFrontAPI;
+
+...
+
+$api = new EFrontAPI("1.0", "https://your-efront-domain.com/API", "your-api-key");
+$api->getSystemInfo();
+$api->addUserToCourse($userId, $courseId);
+
+```
 
 ## Contributing
 
@@ -30,7 +47,7 @@ You can contribute to this project in every way you like. If you encounter any e
 
 ### Testing
 
-In order to test the application, you need to set apiVersion, apiLocation and apiKey accordingly.
+In order to test the application, you need to set apiVersion, apiLocation and apiKey accordingly. See ```/tests/SimpleApiTest.php``` for an example.
 
 ```vendor/bin/phpunit```
 
