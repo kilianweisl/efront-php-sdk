@@ -36,6 +36,32 @@ class UserJob extends AbstractAPI
   }
 
   /**
+   * Adds a user to a job.
+   *
+   * @since 1.0.3
+   *
+   * @param   mixed $jobId (Required) | The job identifier.
+   * @param   mixed $userId  (Required) | The user identifier.
+   *
+   * @throws \Exception
+   *
+   * @return array (Associative)
+   */
+  public function AddRelationWithPost($jobId, $userId)
+  {
+    $this->_CheckId($jobId)->_CheckId($userId);
+
+    return $this->_requestHandler->Post (
+      $this->_GetAPICallURL('/Job/AddUser'),
+      $this->_apiKey,
+      [
+        'JobId' => $jobId,
+        'UserId' => $userId
+      ]
+    );
+  }
+
+  /**
    * Removes the relation between the requested user and job.
    *
    * @param   mixed $userId  (Required) | The user identifier.
@@ -54,6 +80,27 @@ class UserJob extends AbstractAPI
       $this->_GetAPICallURL('/Job/' . $jobId . '/RemoveUser'),
       $this->_apiKey,
       ['UserId' => $userId]
+    );
+  }
+
+  /**
+   * Returns information about user jobs.
+   *
+   * @since 1.0.3
+   *
+   * @param mixed $id   (Required) | The user identifier.
+   *
+   * @throws \Exception
+   *
+   * @return array (Associative)
+   */
+  public function GetInfoAboutJobs($id)
+  {
+    $this->_CheckId($id);
+
+    return $this->_requestHandler->Get (
+      $this->_GetAPICallURL('/User/' . $id . '/Jobs'),
+      $this->_apiKey
     );
   }
 }

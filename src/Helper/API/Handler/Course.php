@@ -52,4 +52,48 @@ class Course extends AbstractAPI
       $this->_GetAPICallURL('/course/' . $id . '/training-sessions'), $this->_apiKey
     );
   }
+
+  /**
+   * Returns the content IDs for a given course.
+   *
+   * @since 1.0.3
+   * @author Kilian Weisl
+   *
+   * @param mixed $id   (Required)  | The course identifier.
+   *
+   * @throws \Exception
+   *
+   * @return array (Associative)
+   */
+  public function GetContentIdsForCourse($id)
+  {
+    $this->_CheckId($id);
+
+    return $this->_requestHandler->Get (
+      $this->_GetAPICallURL('/Course/' . $id . '/Content'),
+      $this->_apiKey
+    );
+  }
+
+  /**
+   * Creates a course.
+   *
+   * @since 1.0.3
+   * @author Kilian Weisl
+   * 
+   * @param array $courseInfo (Required) | The course information.
+   *
+   * @throws \Exception
+   *
+   * @return array (Associative)
+   *
+   */
+  public function Create(array $courseInfo)
+  {
+    return $this->_requestHandler->Post (
+      $this->_GetAPICallURL('/Course'), 
+      $this->_apiKey,
+      $courseInfo
+    );
+  }
 }

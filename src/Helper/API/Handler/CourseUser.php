@@ -38,6 +38,34 @@ class CourseUser extends AbstractAPI
   }
 
   /**
+   * Adds a user to a course.
+   *
+   * @since 1.0.3
+   * @author Kilian Weisl
+   * 
+   * @param mixed $courseId (Required) | The course identifier.
+   * @param mixed $userId   (Required) | The user identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
+  public function AddRelationWithPost($courseId, $userId)
+  {
+    $this->_CheckId($courseId)->_CheckId($userId);
+
+    return $this->_requestHandler->Post (
+      $this->_GetAPICallURL('/Course/AddUser'), 
+      $this->_apiKey,
+      [
+        'CourseId' => $courseId,
+        'UserId' => $userId
+      ]
+    );
+  }
+
+  /**
    * Returns the status of the requested user into the requested course.
    *
    * @since 1.0.0
@@ -84,7 +112,7 @@ class CourseUser extends AbstractAPI
   }
 
   /**
-   * Updates the status of the requested user in the requested course.
+   * Update the status of the specified user in the specified course.
    *
    * @since 1.0.0
    *
@@ -104,6 +132,76 @@ class CourseUser extends AbstractAPI
       $this->_GetAPICallURL('/CourseUserStatus/' . $courseId . ',' . $userId),
       $this->_apiKey,
       $info
+    );
+  }
+
+  /**
+   * Update the status of the specified user in the specified course.
+   *
+   * @since 1.0.3
+   * @author Kilian Weisl
+   * 
+   * @param   array $info (Required) | The information to update.
+   * Must include 'courseId' and 'userId' as keys.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
+  public function UpdateStatusWithArray(array $info)
+  {
+    return $this->_requestHandler->Post (
+      $this->_GetAPICallURL('/CourseUserStatus'), 
+      $this->_apiKey,
+      $info
+    );
+  }
+
+  /**
+   * Returns information about the progress of the specified user in the 
+   * specified course.
+   *
+   * @since 1.0.3
+   * @author Kilian Weisl
+   *
+   * @param mixed $courseId   (Required)  | The course identifier.
+   * @param mixed $userId     (Required)  | The user identifier.
+   *
+   * @throws \Exception
+   *
+   * @return array (Associative)
+   */
+  public function GetUserProgressForCourse($courseId, $userId)
+  {
+    $this->_CheckId($courseId)->_CheckId($userId);
+
+    return $this->_requestHandler->Get (
+      $this->_GetAPICallURL('/Course/' . $courseId . '/UserProgress/' . $userId), $this->_apiKey
+    );
+  }
+
+  /**
+   * Returns a list of all the test attempts that the specified user has made in 
+   * the specified course.
+   *
+   * @since 1.0.3
+   * @author Kilian Weisl
+   *
+   * @param mixed $courseId   (Required)  | The course identifier.
+   * @param mixed $userId     (Required)  | The user identifier.
+   *
+   * @throws \Exception
+   *
+   * @return array (Associative)
+   */
+  public function GetTestAttemptsForCourse($courseId, $userId)
+  {
+    $this->_CheckId($courseId)->_CheckId($userId);
+
+    return $this->_requestHandler->Get (
+      $this->_GetAPICallURL('/CourseUserTestAttempts/' . $courseId . ',' . $userId),
+      $this->_apiKey
     );
   }
 }

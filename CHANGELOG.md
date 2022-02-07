@@ -2,6 +2,12 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## [1.0.3] - 2022-02-07
+
+### Changed
+
+* Added missing endpoints (see README)
+
 ## [1.0.1] - 2022-01-07
 
 ### Changed

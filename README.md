@@ -26,6 +26,8 @@ Endpoints can be accessed the same way as before. Please refer to the provided d
 
 ## Contributing
 
+You can contribute to this project in every way you like. If you encounter any errors or spot missing endpoints, feel free to contact me or open an issue.
+
 ### Testing
 
 In order to test the application, you need to set apiVersion, apiLocation and apiKey accordingly.
@@ -64,37 +66,37 @@ The authors provided the following [documentation](https://github.com/epignosis/
 | /Branch/{Id}                      | GET      | ✅          |
 | /Branches/                        | GET      | ✅          |
 | /Branch                           | POST     | ✅          |
-| /Branch/AddUser                   | POST     | ❌ --> ✅   |
+| /Branch/AddUser                   | POST     | ❌ --> ✅ v1.0.0   |
 | /Branch/{Id}/AddUser              | PUT      | ✅          |
 | /Category/{Id}                    | GET      | ✅          |
 | /Categories                       | GET      | ✅          |
 | /Course/{Id}                      | GET      | ✅          |
-| /Course/{CourseId}/UserProgress/{UserId}| GET      | ❌    |
-| /CourseUserTestAttempts/{CourseId},{UserId}| GET   | ❌    |
+| /Course/{CourseId}/UserProgress/{UserId}| GET      | ❌ --> ✅ v1.0.3   |
+| /CourseUserTestAttempts/{CourseId},{UserId}| GET   | ❌ --> ✅ v1.0.3   |
 | /Courses                          | GET      | ✅          |
-| /Course/{Id}/Content              | GET      | ❌          |
-| /Course                           | POST     | ❌          |
+| /Course/{Id}/Content              | GET      | ❌ --> ✅ v1.0.3  |
+| /Course                           | POST     | ❌ --> ✅ v1.0.3  |
 | /Course/{Id}/AddUser              | PUT      | ✅          |
 | /Course/{Id}/RemoveUser           | PUT      | ✅          |
 | /CourseUserStatus/{CourseId},{UserId}| GET   | ✅          |
 | /CourseUserStatus/{CourseId},{UserId}| POST  | ✅          |
-| /CourseUserStatus                 | POST     | ❌          |
-| /Course/AddUser                   | POST     | ❌          |
+| /CourseUserStatus                 | POST     | ❌ --> ✅ v1.0.3  |
+| /Course/AddUser                   | POST     | ❌ --> ✅ v1.0.3   |
 | /curriculums                      | GET      | ✅          |
 | /Curriculum/{Id}/AddUser          | PUT      | ✅          |
 | /Curriculum/{Id}/RemoveUser       | PUT      | ✅          |
 | /User/{Id}/Catalog/               | GET      | ✅          |
 | /Group/{Id}                       | GET      | ✅          |
 | /Groups                           | GET      | ✅          |
-| /Group/AddUser                    | POST     | ❌          |
+| /Group/AddUser                    | POST     | ❌ --> ✅ v1.0.3  |
 | /Group/{Id}/AddUser               | PUT      | ✅          |
 | /Group/{Id}/RemoveUser            | PUT      | ✅          |
 | /Job/{Id}/RemoveUser              | PUT      | ✅          |
 | /Job/{Id}                         | GET      | ✅          |
 | /Job/{Id}                         | PUT      | ✅          |
 | /Jobs                             | GET      | ✅          |
-| /User/{Id}/Jobs                   | GET      | ❌          |
-| /Job/AddUser                      | POST     | ❌          |
+| /User/{Id}/Jobs                   | GET      | ❌ --> ✅ v1.0.3   |
+| /Job/AddUser                      | POST     | ❌ --> ✅ v1.0.3  |
 | /Job                              | POST     | ✅          |
 | /Job/{Id}/AddUser                 | PUT      | ✅          |
 | /extended-fields/users            | GET      | ✅          |
