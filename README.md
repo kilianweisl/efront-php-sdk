@@ -1,5 +1,7 @@
 # EFront PHP SDK
 
+[![Latest Stable Version](https://poser.pugx.org/weisl/efront-php-sdk/v)](https://packagist.org/packages/weisl/efront-php-sdk) [![PHP Version Require](https://poser.pugx.org/weisl/efront-php-sdk/require/php)](https://packagist.org/packages/weisl/efront-php-sdk) [![License](https://poser.pugx.org/weisl/efront-php-sdk/license)](https://packagist.org/packages/weisl/efront-php-sdk)
+
 This is an unofficial composer package of the original [eFrontPRO-SDK](https://github.com/epignosis/efrontPRO-SDK/) from [Epignosis](https://www.epignosishq.com/). 
 It aims to improve simplicity as well as maintaining/adding endpoints from the official documentation provided on [Swaggerhub page](https://app.swaggerhub.com/apis/Epignosis/Efront-API/1.0.0#/).
 
