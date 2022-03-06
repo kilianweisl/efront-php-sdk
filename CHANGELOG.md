@@ -2,6 +2,13 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## [2.0.0] - 2022-03-06
+
+### Changed
+
+* Changed interface for calling API through wrapper.
+* Updated README
+
 ## [1.0.4] - 2022-02-07
 
 ### Changed
