@@ -139,6 +139,28 @@ class User extends AbstractAPI
   }
 
   /**
+   * Returns extended information about the requested user.
+   * (Endpoint may not exist)
+   * 
+   * @since 2.0.1
+   *
+   * @param   mixed $id (Required) | The user identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
+  public function GetExtendedInfo($id)
+  {
+    $this->_CheckId($id);
+
+    return $this->_requestHandler->Get (
+      $this->_GetAPICallURL('/User/' . $id . '/extended'), $this->_apiKey
+    );
+  }
+
+  /**
    * Log-out the requested user.
    *
    * @param   string $loginName (Required) | The user's login name.

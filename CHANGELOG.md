@@ -2,6 +2,13 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## [2.0.1] - 2022-06-23
+
+### Changed
+
+* Fixed bug in test
+* Added new endpoint for user (User/:id/extended)
+
 ## [2.0.0] - 2022-03-06
 
 ### Changed

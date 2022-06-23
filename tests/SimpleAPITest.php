@@ -25,7 +25,7 @@ class SimpleAPITest extends TestCase
     $api = new EFrontAPI($this->apiVersion, $this->apiLocation, $this->apiKey);
 
     $this->assertTrue(
-      json_decode($api->get()->GetAPI('System')->GetInfo())->success
+      json_decode($api->GetAPI('System')->GetInfo())->success
     );
   }
 }
