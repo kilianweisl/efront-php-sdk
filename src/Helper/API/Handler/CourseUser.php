@@ -107,7 +107,7 @@ class CourseUser extends AbstractAPI
     return $this->_requestHandler->Put (
       $this->_GetAPICallURL('/Course/' . $courseId . '/RemoveUser'),
       $this->_apiKey,
-      ['UserId' => $userId, 'Force' => (string) $force]
+      ['UserId' => $userId, 'Force' => $force]
     );
   }
 

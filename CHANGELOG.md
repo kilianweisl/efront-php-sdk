@@ -2,6 +2,12 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## [2.0.2] - 2022-08-10
+
+### Changed
+
+* Remove cast to string for 'Force' in CourseUser->RemoveRelation
+
 ## [2.0.1] - 2022-06-23
 
 ### Changed
