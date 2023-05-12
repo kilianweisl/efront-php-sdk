@@ -161,6 +161,30 @@ class User extends AbstractAPI
   }
 
   /**
+   * Returns extended information about the requested user in a given language.
+   * (Endpoint may not exist)
+   * 
+   * @since 2.0.3
+   *
+   * @param   mixed $id     (Required) | The user identifier.
+   * @param   mixed $langId (Required) | The eFront language identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
+  public function GetExtendedInfoLocalized($id, $langId)
+  {
+    $this->_CheckId($id);
+
+    return $this->_requestHandler->Get (
+      $this->_GetAPICallURL('/User/' . $id . '/extended?language=' . $langId),
+      $this->_apiKey
+    );
+  }
+
+  /**
    * Log-out the requested user.
    *
    * @param   string $loginName (Required) | The user's login name.

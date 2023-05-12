@@ -2,6 +2,13 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## [2.0.3] - 2023-05-12
+
+### Changed
+
+* Add additional method to get course content in a given language.
+* Add additional method to get extended user in a given language.
+
 ## [2.0.2] - 2022-08-10
 
 ### Changed

@@ -76,6 +76,29 @@ class Course extends AbstractAPI
   }
 
   /**
+   * Returns the content IDs for a given course in a given language.
+   *
+   * @since 2.0.3
+   * @author Kilian Weisl
+   *
+   * @param mixed $id       (Required)  | The course identifier.
+   * @param mixed $langId   (Required)  | The eFront language identifier.
+   *
+   * @throws \Exception
+   *
+   * @return array (Associative)
+   */
+  public function GetContentIdsForCourseLocalized($id, $langId)
+  {
+    $this->_CheckId($id)->_CheckId($langId);
+
+    return $this->_requestHandler->Get (
+      $this->_GetAPICallURL('/Course/' . $id . '/Content?language=' . $langId),
+      $this->_apiKey
+    );
+  }
+
+  /**
    * Creates a course.
    *
    * @since 1.0.3
